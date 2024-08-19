@@ -58,8 +58,8 @@ jobs:
         id: pull_tag_push
         run: |
           docker pull --platform ${{ github.event.inputs.ARCH }} ${{ github.event.inputs.IMAGE_NAME }}
-          docker tag ${{ github.event.inputs.IMAGE_NAME }} ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.TARGET_DOCKRE_REGISTRY }}
-          docker push ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.TARGET_DOCKRE_REGISTRY }}
+          docker tag ${{ github.event.inputs.IMAGE_NAME }} ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.TARGET_DOCKRE_REGISTRY }}:${{ github.event.inputs.NEW_IMAGE_VERSION }}
+          docker push ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.TARGET_DOCKRE_REGISTRY }}:${{ github.event.inputs.NEW_IMAGE_VERSION }}
         continue-on-error: true
 
       - name: 检查镜像推送成功
