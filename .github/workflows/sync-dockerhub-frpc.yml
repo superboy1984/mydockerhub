@@ -7,10 +7,6 @@ on:
         description: '原镜像名称:版本'
         required: true
         default: 'snowdreamtech/frpc:0.52.3'
-      NEW_NAME:
-        description: '同步后镜像名称:版本'
-        required: true
-        default: 'snowdreamtech/frpc:0.52.3'
       TARGET_REGISTRY:
         description: '仓库地址'
         required: true
@@ -23,6 +19,10 @@ on:
         description: '镜像仓库'
         required: true
         default: 'frpc'
+      NEW_IMAGE_VERSION:
+        description: '同步后镜像版本'
+        required: true
+        default: '0.52.3'
       ARCH:
         description: '系统架构'
         required: true
